@@ -20,7 +20,7 @@ public class ActivationController : ControllerBase
         if (secret != "ABHIJAT_SECRET_2024")
             return Unauthorized(new { message = "Not authorized" });
 
-        var allowed = new[] { 3, 7, 10, 15, 30, 90, 180, 360 };
+        var allowed = new[] { 3, 7, 10, 15, 30, 45, 90, 180, 360 };
         if (!allowed.Contains(req.DurationDays))
             return BadRequest(new { message = "Invalid duration" });
 
